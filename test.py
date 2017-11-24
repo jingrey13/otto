@@ -38,6 +38,7 @@ def send_message(text, chat_id):
 def main():
     last_textchat = (None, None)
     while True:
+        get_url("https://api.telegram.org/bot415048379:AAHoccZk9RPZll17K2mroxTp3U7qMl9s3sg/sendMessage?chat_id=114698280&text=Hello")
         text, chat = get_last_chat_id_and_text(get_updates())
         if (text, chat) != last_textchat:
             send_message(text, chat)
