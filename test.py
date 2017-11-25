@@ -13,4 +13,4 @@ class BotHandler:
 			return resp
     
 mybot = BotHandler(token)
-mybot.send_message(114698280, 'Hello123')
+mybot.send_message('114698280', 'Hello123')
