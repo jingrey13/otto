@@ -4,4 +4,3 @@ idna==2.6
 requests==2.18.4
 urllib3==1.22
 virtualenv==15.1.0
-python_full_version==python-3.6.3
