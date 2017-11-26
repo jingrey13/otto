@@ -1,7 +1,7 @@
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, MessageHandler, Filters
 
-updater = Updater(token='TOKEN')
+updater = Updater(token='415048379:AAHoccZk9RPZll17K2mroxTp3U7qMl9s3sg')
 dispatcher = updater.dispatcher
 
 import logging
