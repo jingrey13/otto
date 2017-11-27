@@ -48,6 +48,7 @@ if __name__ == "__main__":
     #dp.add_handler(MessageHandler(Filters.text, echo))
     dp.add_handler(CommandHandler('ping', ping))
     dp.add_handler(CommandHandler('hi', hi))
+    dp.add_handler(CommandHandler('pingall', pingall))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
