@@ -12,7 +12,7 @@ def ping(bot, update):
     update.effective_message.reply_text("I'm alive! =D")
 def hi(bot, update):
     name = update.message.from_user.username
-    update.effective_message.reply_text(name)
+    update.effective_message.reply_text("@"+name)
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
