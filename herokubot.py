@@ -16,16 +16,7 @@ def hi(bot, update):
 def pingall(bot,update):
     name = update.message.from_user.first_name + update.message.from_user.last_name
     update.effective_message.reply_text(name+" wants to play a game. Where is everybody?")
-    update.effective_message.reply_text("@cheekydeeky")
-    update.effective_message.reply_text("@Meowcolm")
-    update.effective_message.reply_text("@Reinaku")
-    update.effective_message.reply_text("@JeriKokHo")
-    update.effective_message.reply_text("@Nnavi92")
-    update.effective_message.reply_text("@pamelatay")
-    update.effective_message.reply_text("@Haoward")
-    update.effective_message.reply_text("@JinGrey13")
-    update.effective_message.reply_text("@280793292")
-    update.effective_message.reply_text("@493066638")
+
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
