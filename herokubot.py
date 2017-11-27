@@ -13,8 +13,9 @@ def echo(bot, update):
 def ping(bot, update):
     update.effective_message.reply_text("I'm alive! =D")
 def hi(bot, update):
-    name = update.message.from_user.username
-    update.effective_message.reply_text("Hi there @"+name)
+    name = update.message.from_user.first_name
+    name2 = update.message.from_user.last_name
+    update.effective_message.reply_text("Hi there @"+name+" "+name2)
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
