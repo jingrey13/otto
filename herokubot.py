@@ -3,7 +3,8 @@ import os
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-secreyhitler = -1001100171347
+jinotto = 114698280
+secrethitler = -1001100171347
 
 def start(bot, update):
     update.effective_message.reply_text("Hi!")
