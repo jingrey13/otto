@@ -10,7 +10,9 @@ def echo(bot, update):
     update.effective_message.reply_text(update.effective_message.text)
 def ping(bot, update):
     update.effective_message.reply_text("I'm alive! =D")
-
+def hi(bot, update):
+    name = update.messgae.from_user.id
+    update.effective_message.reply_text(name)
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
@@ -32,6 +34,7 @@ if __name__ == "__main__":
     dp.add_handler(CommandHandler('start', start))
     #dp.add_handler(MessageHandler(Filters.text, echo))
     dp.add_handler(CommandHandler('ping', ping))
+    dp.add_handler(CommandHandler('hi', hi))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
