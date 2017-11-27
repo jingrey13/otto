@@ -11,7 +11,7 @@ def echo(bot, update):
 def ping(bot, update):
     update.effective_message.reply_text("I'm alive! =D")
 def hi(bot, update):
-    name = update.messgae.from_user.id
+    name = update.message.from_user.username
     update.effective_message.reply_text(name)
 
 if __name__ == "__main__":
