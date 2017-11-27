@@ -14,7 +14,7 @@ def hi(bot, update):
     name = update.message.from_user.username
     update.effective_message.reply_text("Hi there @"+name)
 def pingall(bot,update):
-    name = update.message.from_user.first_name + update.message.from_user.last_name
+    name = update.message.from_user.first_name
     update.effective_message.reply_text(name+" wants to play a game. Where is everybody?")
 
 
