@@ -19,11 +19,11 @@ def hi(bot, update):
 def greeting(bot, update):
     string = update.effective_message.text
     if string.upper()[:2] == "HI":
-        update.effective_message.reply_text("Hi!")
+        update.effective_message.reply_text("Hi "+update.message.from_user.first_name+" !")
     if string.upper()[:5] == "HELLO":
-        update.effective_message.reply_text("Hi!")
+        update.effective_message.reply_text("Hi! "+update.message.from_user.first_name+" !")
     if string.upper()[:7] == "MORNING":
-        update.effective_message.reply_text("Morning!")
+        update.effective_message.reply_text("Morning "+update.message.from_user.first_name+" !")
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
