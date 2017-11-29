@@ -19,7 +19,7 @@ def hi(bot, update):
 def greeting(bot, update):
     chatid = update.message.chat.id
     string = update.effective_message.text
-    if string.upper()[:3] == "HI ":
+    if string.upper()[:2]+" " == "HI ":
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
     if string.upper()[:3] == "HIH":
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
