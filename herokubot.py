@@ -39,7 +39,11 @@ def pingall(bot,update):
     if chatid == secrethitler:
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
-
+def inspire(bot,update):
+    url = "http://inspirobot.me/api?generate=true"
+    r = request.get(url)
+    bot.sendMessage(chat_id=update.message.chat_id, text=r)
+        
 
 if __name__ == "__main__":
     # Set these variable to the appropriate values
@@ -64,6 +68,7 @@ if __name__ == "__main__":
     dp.add_handler(CommandHandler('hi', hi))
     dp.add_handler(MessageHandler(Filters.text, greeting))
     dp.add_handler(CommandHandler('pingall', pingall))
+    dp.add_handler(CommandHandler('inspire', inspire))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
