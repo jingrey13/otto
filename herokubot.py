@@ -17,9 +17,10 @@ def hi(bot, update):
     name2 = update.message.from_user.last_name
     update.effective_message.reply_text("Hi there "+name)
 def greeting(bot, update):
+    chatid = update.message.chat.id
     string = update.effective_message.text
     if string.upper()[:2] == "HI":
-        update.effective_message.reply_text("Hi "+update.message.from_user.first_name+"!")
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
     if string.upper()[:5] == "HELLO":
         update.effective_message.reply_text("Hi! "+update.message.from_user.first_name+"!")
     if string.upper()[:7] == "MORNING":
