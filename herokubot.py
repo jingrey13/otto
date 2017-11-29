@@ -1,6 +1,6 @@
 import logging
 import os
-import requests
+import urllib.request
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -42,8 +42,10 @@ def pingall(bot,update):
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
 def inspire(bot,update):
     url = "http://inspirobot.me/api?generate=true"
-    r = requests.get(url)
-    quote = json.loads(r.content)
+    #r = requests.get(url)
+    #quote = json.loads(r.content)
+    #bot.sendMessage(chat_id=update.message.chat_id, text=quote)
+    quote = urllib.request.urlopen("http://inspirobot.me/api?generate=true").read()
     bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         
 
