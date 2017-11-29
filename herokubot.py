@@ -42,7 +42,8 @@ def pingall(bot,update):
 def inspire(bot,update):
     url = "http://inspirobot.me/api?generate=true"
     r = request.get(url)
-    bot.sendMessage(chat_id=update.message.chat_id, text=r)
+    quote = json.loads(r.content)
+    bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         
 
 if __name__ == "__main__":
