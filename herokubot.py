@@ -18,7 +18,9 @@ def hi(bot, update):
     update.effective_message.reply_text("Hi there "+name)
 def greeting(bot, update):
     string = update.effective_message.text
-    if string.upper() == "MORNING":
+    if string.upper()[:2] == "HI":
+        update.effective_message.reply_text("Hi!")
+    if string.upper()[:7] == "MORNING":
         update.effective_message.reply_text("Morning!")
 def pingall(bot,update):
     chatid = update.message.chat.id
