@@ -45,7 +45,7 @@ def inspire(bot,update):
     url = "http://inspirobot.me/api?generate=true"
     r = requests.get(url)
     quote = r.text
-    bot.sendPhoto(chat_id=update.message.chat_id, photo=quote)
+    bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         
 
 if __name__ == "__main__":
