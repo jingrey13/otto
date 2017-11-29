@@ -1,6 +1,6 @@
+import requests
 import logging
 import os
-#import requests
 import json
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
