@@ -1,5 +1,6 @@
 import logging
 import os
+import requests
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
