@@ -21,6 +21,8 @@ def greeting(bot, update):
     string = update.effective_message.text
     if string.upper()== "HI":
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
+    if string.upper()[:3] == "HI ":
+        bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
     if string.upper()[:3] == "HIH":
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi '+update.message.from_user.first_name+'!')
     if string.upper()[:3] == "HI!":
