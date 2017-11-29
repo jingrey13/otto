@@ -41,7 +41,7 @@ def pingall(bot,update):
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
 def inspire(bot,update):
     url = "http://inspirobot.me/api?generate=true"
-    r = request.get(url)
+    r = requests.get(url)
     quote = json.loads(r.content)
     bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         
