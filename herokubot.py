@@ -9,7 +9,6 @@ secrethitler = -1001100171347
 def start(bot, update):
     update.effective_message.reply_text("Hi!")
 def echo(bot, update):
-    if chatid == jinotto:
     update.effective_message.reply_text(update.effective_message.text)
 def ping(bot, update):
     update.effective_message.reply_text("I'm alive! =D")
@@ -17,6 +16,9 @@ def hi(bot, update):
     name = update.message.from_user.first_name
     name2 = update.message.from_user.last_name
     update.effective_message.reply_text("Hi there "+name)
+def echo(bot, update):
+    if update.effective_message.text.upper()=="morning"
+        update.effective_message.reply_text("Morning!)
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
@@ -46,7 +48,7 @@ if __name__ == "__main__":
     #dp.add_handler(MessageHandler(Filters.text, echo))
     dp.add_handler(CommandHandler('ping', ping))
     dp.add_handler(CommandHandler('hi', hi))
-    #dp.add_handler(MessageHandler(Filters.text, greeting))
+    dp.add_handler(MessageHandler(Filters.text, greeting))
     dp.add_handler(CommandHandler('pingall', pingall))
 
     # Start the webhook
