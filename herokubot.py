@@ -56,7 +56,6 @@ def resetinspire(bot, job):
     global inspiretime
     inspiretime = 0
 def resettimer(bot, update, job_queue):
-    bot.sendMessage(chat_id=update.message.chat_id, text='Wait')
     job_queue.run_once(inspire, 0, context=update.message.chat_id)
     job_queue.run_once(resetinspire, 60, context=update.message.chat_id)
 
