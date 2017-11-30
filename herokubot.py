@@ -34,7 +34,7 @@ def greeting(bot, update):
         bot.sendMessage(chat_id=update.message.chat_id, text='Hi! '+update.message.from_user.first_name+'!')
     if string.upper()[:7] == "MORNING":
         bot.sendMessage(chat_id=update.message.chat_id, text='Morning '+update.message.from_user.first_name+'!')
-    if string.upper()[:7] == "BYE":
+    if string.upper()[:3] == "BYE":
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
 def pingall(bot,update):
     chatid = update.message.chat.id
