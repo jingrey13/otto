@@ -41,7 +41,7 @@ def pingall(bot,update):
     #update.effective_message.reply_text(chatid)
     if chatid == secrethitler:
         name = update.message.from_user.first_name
-        bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
+        bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13\n@mintcookies')
 def inspire(bot,update,job_queue):
     global inspiretime
     if inspiretime == 0:
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     #dp.add_handler(MessageHandler(Filters.text, echo))
     dp.add_handler(CommandHandler('ping', ping))
     dp.add_handler(CommandHandler('hi', hi))
-    dp.add_handler(MessageHandler(Filters.text, greeting))
+#    dp.add_handler(MessageHandler(Filters.text, greeting))
     dp.add_handler(CommandHandler('pingall', pingall))
 #    dp.add_handler(CommandHandler('inspire', inspire))
     dp.add_handler(CommandHandler('inspire', inspire, pass_job_queue=True))
