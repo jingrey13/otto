@@ -53,6 +53,7 @@ def inspire(bot,update):
     else:
         bot.sendMessage(chat_id=update.message.chat_id, text='We are inspired enough for now. Please wait.')
 def resetinspire(bot, job):
+    global inspiretime
     inspiretime = 0
 def resettimer(bot, update, job_queue):
     job_queue_run_once(resetinspire, 60, context=update.message.chat_id)
@@ -82,7 +83,7 @@ if __name__ == "__main__":
     dp.add_handler(MessageHandler(Filters.text, greeting))
     dp.add_handler(CommandHandler('pingall', pingall))
     dp.add_handler(CommandHandler('inspire', inspire))
-    dp.add_handler(CommandHandler('inspire', timerreset, pass_job_queue=True))
+    dp.add_handler(CommandHandler('inspire', resettimer, pass_job_queue=True))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
