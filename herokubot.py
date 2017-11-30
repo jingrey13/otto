@@ -51,8 +51,8 @@ def inspire(bot,update):
         bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         inspiretime = 1
         bot.sendMessage(chat_id=update.message.chat_id, text=inspiretime)
-#    else:
-#        bot.sendMessage(chat_id=update.message.chat_id, text='We are inspired enough for now. Please wait.')
+    else:
+        bot.sendMessage(chat_id=update.message.chat_id, text='We are inspired enough for now. Please wait.')
 #def resetinspire(bot, job):
 #    inspiretime = 0
 #def resettimer(bot, update, job_queue):
