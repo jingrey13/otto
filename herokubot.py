@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Set up the Updater
     updater = Updater(TOKEN)
     dp = updater.dispatcher
-    j = dp.job_queue
+    j = updater.job_queue
     # Add handlers
     dp.add_handler(CommandHandler('start', start))
     #dp.add_handler(MessageHandler(Filters.text, echo))
