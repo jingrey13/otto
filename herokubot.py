@@ -43,15 +43,15 @@ def pingall(bot,update):
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
 def inspire(bot,update):
-#    if inspiretime == 0:
+    if inspiretime == 0:
         url = "http://inspirobot.me/api?generate=true"
         r = requests.get(url)
         quote = r.text
         bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         inspiretime = 1
         bot.sendMessage(chat_id=update.message.chat_id, text=inspiretime)
-#    else:
-#        bot.sendMessage(chat_id=update.message.chat_id, text="We are inspired enough for now. Please wait.")
+    else:
+        bot.sendMessage(chat_id=update.message.chat_id, text='We are inspired enough for now. Please wait.')
 #def resetinspire(bot, job):
 #    inspiretime = 0
 #def resettimer(bot, update, job_queue):
