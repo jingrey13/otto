@@ -7,7 +7,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 jinotto = 114698280
 secrethitler = -1001100171347
-inspiretime=0
+inspiretime = 0
 
 def start(bot, update):
     update.effective_message.reply_text("Hi!")
