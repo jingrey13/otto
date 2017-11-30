@@ -42,7 +42,7 @@ def pingall(bot,update):
     if chatid == secrethitler:
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?\n@edddddyyyy\n@Meowcolm\n@Reinaku\n@JeriKokHo\n@Nnavi92\n@pamelatay\n@Haoward\n@JinGrey13')
-def inspire(bot,update):
+def inspire(bot,update,job_queue):
     global inspiretime
     if inspiretime == 0:
         url = "http://inspirobot.me/api?generate=true"
@@ -50,14 +50,15 @@ def inspire(bot,update):
         quote = r.text
         bot.sendMessage(chat_id=update.message.chat_id, text=quote)
         inspiretime = 1
+        job_queue.run_once(resetinspire, 60, context=update.message.chat_id)
     else:
         bot.sendMessage(chat_id=update.message.chat_id, text='We are inspired enough for now. Please wait.')
 def resetinspire(bot, job):
     global inspiretime
     inspiretime = 0
-def resettimer(bot, update, job_queue):
-    bot.sendMessage(chat_id=update.message.chat_id, text='Wait')
-    job_queue.run_once(inspire, 0, context=update.message.chat_id)
+#def resettimer(bot, update, job_queue):
+#    bot.sendMessage(chat_id=update.message.chat_id, text='Wait')
+#    job_queue.run_once(inspire, 0, context=update.message.chat_id)
 #    job_queue.run_once(resetinspire, 60, context=update.message.chat_id)
 
 if __name__ == "__main__":
@@ -85,7 +86,7 @@ if __name__ == "__main__":
     dp.add_handler(MessageHandler(Filters.text, greeting))
     dp.add_handler(CommandHandler('pingall', pingall))
 #    dp.add_handler(CommandHandler('inspire', inspire))
-    dp.add_handler(CommandHandler('inspire', resettimer, pass_job_queue=True))
+    dp.add_handler(CommandHandler('inspire', inspire, pass_job_queue=True))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
