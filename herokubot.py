@@ -39,7 +39,7 @@ def greeting(bot, update):
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
-    if chatid == secrethitler:
+#    if chatid == secrethitler:
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
 def inspire(bot,update,job_queue):
