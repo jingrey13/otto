@@ -47,8 +47,9 @@ def pingall(bot,update):
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
         j=0
+        combine_msg=""
         for i in sublist:
-            combined_msg=combined_msg+sublist[i]+'\n'
+            combined_msg=combined_msg+sublist[i]+"\n"
             j+=1
         bot.sendMessage(chat_id=update.message.chat_id, text=combined_msg)
         del sublist[:]
