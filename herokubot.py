@@ -49,7 +49,7 @@ def pingall(bot,update):
         j=0
         combined_msg=""
         for x in sublist:
-            combined_msg = '@' + x + '\n'
+            combined_msg = combined_msg + '@' + x + '\n'
         bot.sendMessage(chat_id=update.message.chat_id, text=combined_msg)
         del sublist[:]
 def inspire(bot,update,job_queue):
