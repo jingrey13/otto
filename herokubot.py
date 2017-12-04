@@ -46,9 +46,8 @@ def pingall(bot,update):
         sublist = [s.replace('\n', '') for s in sublist]
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
-        bot.sendMessage(chat_id=update.message.chat_id, text=sublist)
+        bot.sendMessage(chat_id=update.message.chat_id, text=sublist[1])
         del sublist[:]
-        bot.sendMessage(chat_id=update.message.chat_id, text=sublist)
 def inspire(bot,update,job_queue):
     global inspiretime
     if inspiretime == 0:
