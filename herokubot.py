@@ -51,7 +51,7 @@ def pingall(bot,update):
         for i in sublist:
             combined_msg=combined_msg+sublist[i]+"\n"
             j+=1
-        bot.sendMessage(chat_id=update.message.chat_id, text=combined_msg)
+        bot.sendMessage(chat_id=update.message.chat_id, text=j)
         del sublist[:]
 def inspire(bot,update,job_queue):
     global inspiretime
