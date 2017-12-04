@@ -37,11 +37,14 @@ def greeting(bot, update):
     if string.upper()[:3] == "BYE":
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
 def pingall(bot,update):
+    sub_file = open("subscriberlist.txt", "r")
+    sublist = sub_file.readlines()
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
     if chatid == jinotto:
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
+        bot.sendMessage(chat_id=update.message.chat_id, text=sublist)
 def inspire(bot,update,job_queue):
     global inspiretime
     if inspiretime == 0:
@@ -94,6 +97,3 @@ if __name__ == "__main__":
                           url_path=TOKEN)
     updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
     updater.idle()
-    
-    # Setup list
-    
