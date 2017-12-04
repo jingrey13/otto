@@ -43,6 +43,8 @@ def pingall(bot,update):
         sub_file = open("subscriberlist.txt", "r")
         sublist = sub_file.readlines()
         sub_file.close()
+        sublist.strip('"')
+        sublist.strip('\n')
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
         bot.sendMessage(chat_id=update.message.chat_id, text=sublist)
