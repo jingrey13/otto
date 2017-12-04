@@ -37,16 +37,16 @@ def greeting(bot, update):
     if string.upper()[:3] == "BYE":
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
 def pingall(bot,update):
-    sub_file = open("subscriberlist.txt", "r")
-    sublist = sub_file.readlines()
-    sub_file.close()
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
     if chatid == jinotto:
+        sub_file = open("subscriberlist.txt", "r")
+        sublist = sub_file.readlines()
+        sub_file.close()
         name = update.message.from_user.first_name
         bot.sendMessage(chat_id=update.message.chat_id, text=name+' wants to play a game. Where is everybody?')
         bot.sendMessage(chat_id=update.message.chat_id, text=sublist)
-    del sublist[:]    
+        del sublist[:]    
 def inspire(bot,update,job_queue):
     global inspiretime
     if inspiretime == 0:
