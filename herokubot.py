@@ -39,6 +39,7 @@ def greeting(bot, update):
 def pingall(bot,update):
     sub_file = open("subscriberlist.txt", "r")
     sublist = sub_file.readlines()
+    sub_file.close()
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
     if chatid == jinotto:
