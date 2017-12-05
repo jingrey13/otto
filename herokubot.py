@@ -47,8 +47,8 @@ def subscribe(bot, update):
         if sublist[i] == userid:
             yes_flag = 1
     if yes_flag == 0:
-        fh = open("subscriberlist.txt", "w")
-        fh.append(userid)
+        fh = open("subscriberlist.txt", "a")
+        fh.write(userid)
         fh.close()
 def pingall(bot,update):
     chatid = update.message.chat.id
