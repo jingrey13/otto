@@ -37,7 +37,7 @@ def greeting(bot, update):
     if string.upper()[:3] == "BYE":
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
 def subscribe(bot, update):
-    userid = update.message.from_user.id
+    userid = update.message.from_user.username
     bot.sendMessage(chat_id=update.message.chat_id, text=userid)
 def pingall(bot,update):
     chatid = update.message.chat.id
