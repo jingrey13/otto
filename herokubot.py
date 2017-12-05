@@ -94,7 +94,7 @@ if __name__ == "__main__":
     # Add handlers
 #    dp.add_handler(CommandHandler('start', start))
 #    dp.add_handler(MessageHandler(Filters.text, echo))
-    dp.add_handler(CommandHandler('sub', subscribe)
+    dp.add_handler(CommandHandler('sub', subscribe))
     dp.add_handler(CommandHandler('ping', ping))
     dp.add_handler(CommandHandler('hi', hi))
 #    dp.add_handler(MessageHandler(Filters.text, greeting))
