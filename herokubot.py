@@ -40,7 +40,7 @@ def subscribe(bot, update):
     userid = update.message.from_user.username + '\n'
     bot.sendMessage(chat_id=update.message.chat_id, text=userid)
     fh = open("subscriberlist.txt", "w")
-    write(userid)
+    fh.write(userid)
     fh.close()
 def pingall(bot,update):
     chatid = update.message.chat.id
