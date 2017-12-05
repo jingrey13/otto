@@ -36,6 +36,9 @@ def greeting(bot, update):
         bot.sendMessage(chat_id=update.message.chat_id, text='Morning '+update.message.from_user.first_name+'!')
     if string.upper()[:3] == "BYE":
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
+def subscribe(bot, update):
+    userid = update.message.from_user.id
+    bot.sendMessage(chat_id=update.message.chat_id, text=userid)
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
@@ -91,6 +94,7 @@ if __name__ == "__main__":
     # Add handlers
 #    dp.add_handler(CommandHandler('start', start))
 #    dp.add_handler(MessageHandler(Filters.text, echo))
+    dp.add_handler(CommandHandler('sub', subscribe)
     dp.add_handler(CommandHandler('ping', ping))
     dp.add_handler(CommandHandler('hi', hi))
 #    dp.add_handler(MessageHandler(Filters.text, greeting))
