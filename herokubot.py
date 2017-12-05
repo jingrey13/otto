@@ -38,7 +38,7 @@ def greeting(bot, update):
         bot.sendMessage(chat_id=update.message.chat_id, text='Bye '+update.message.from_user.first_name+'!')    
 def subscribe(bot, update):
     userid = update.message.from_user.username + '\n'
-    bot.sendMessage(chat_id=update.message.chat_id, text=userid)
+#    bot.sendMessage(chat_id=update.message.chat_id, text=userid)
     sub_file = open("subscriberlist.txt", "r")
     sublist = sub_file.readlines()
     sub_file.close()
@@ -47,6 +47,7 @@ def subscribe(bot, update):
         if sublist[i] == userid:
             yes_flag = 1
     if yes_flag == 0:
+        bot.sendMessage(chat_id=update.message.chat_id, text=userid)
         fh = open("subscriberlist.txt", "a")
         fh.write(userid)
         fh.close()
