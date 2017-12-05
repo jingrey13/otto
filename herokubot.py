@@ -48,7 +48,7 @@ def subscribe(bot, update):
             yes_flag = 1
     if yes_flag == 0:
         fh = open("subscriberlist.txt", "w")
-        fh.write(userid)
+        fh.append(userid)
         fh.close()
 def pingall(bot,update):
     chatid = update.message.chat.id
