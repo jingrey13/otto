@@ -39,6 +39,9 @@ def greeting(bot, update):
 def subscribe(bot, update):
     userid = update.message.from_user.username
     bot.sendMessage(chat_id=update.message.chat_id, text=userid)
+    fh = open("subscriberlist.txt", "w")
+    write(userid + "\n")
+    fh.close()
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
