@@ -39,9 +39,17 @@ def greeting(bot, update):
 def subscribe(bot, update):
     userid = update.message.from_user.username + '\n'
     bot.sendMessage(chat_id=update.message.chat_id, text=userid)
-    fh = open("subscriberlist.txt", "w")
-    fh.write(userid)
-    fh.close()
+    sub_file = open("subscriberlist.txt", "r")
+    sublist = sub_file.readlines()
+    sub_file.close()
+    yes_flag = 0
+    for i, x in enumerate(sublist):
+        if sublist[i] == userid:
+            yes_flag = 1
+    if yes_flag == 0:
+        fh = open("subscriberlist.txt", "w")
+        fh.write(userid)
+        fh.close()
 def pingall(bot,update):
     chatid = update.message.chat.id
     #update.effective_message.reply_text(chatid)
